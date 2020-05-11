@@ -59,8 +59,10 @@ function App() {
       ((weather.weather[0].main === 'Clouds') ? 'app clouds' : 
       ((weather.weather[0].main === 'Rain') ? 'app rain' :
       ((weather.weather[0].main === 'Thunderstorm') ? 'app thunderstorm' :
-      ((weather.weather[0].main === 'Mist' ||'Haze') ? 'app mist' :
-      ((weather.weather[0].main === 'Snow') ? 'app snow' : 'app'))))) : 'app'
+      ((weather.weather[0].main === 'Clear') ? 'app' :
+      ((weather.weather[0].main === 'Mist') ? 'app mist' :
+      ((weather.weather[0].main === 'Haze') ? 'app haze' :
+      ((weather.weather[0].main === 'Snow') ? 'app snow' : 'app'))))))) : 'app'
     }
       >
        

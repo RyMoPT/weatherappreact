@@ -32,16 +32,20 @@ body {
   background-image: url('./assets/mist.jpg');
 }
 
+.app.mist {
+  background-image: url('./assets/haze.jpg');
+}
 
 main {
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.3));
-  padding: 30px 30px 0px;
+  padding: 0px 30px 0px;
 }
 
 .searchBox {
-  width: 100%;
-  margin: 0 0 75px;
+  width: 90%;
+  padding-top: 30px;
+  margin: auto;
 }
 
 .searchBox .searchBar {
@@ -67,6 +71,10 @@ main {
 
 }
 
+.locationBox {
+  padding-top: 2rem;
+
+}
 .locationBox .location{
   color: #FFF;
   font-size: 3rem;
@@ -81,14 +89,16 @@ main {
   font-weight: 300;
   text-align: center;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+  margin-bottom: 2rem;
 }
 
 .weatherBox {
   text-align: center;
   position: relative;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  margin: 40px;
+  margin: auto;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 16px;
   padding: 15px 25px;
@@ -129,4 +139,12 @@ main {
   font-size: 2rem;
   font-weight: 600;
   text-shadow: 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 450px) {
+  .weatherBox {
+    margin: auto;
+    width: 70%;
+  }
 }
