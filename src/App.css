@@ -10,6 +10,8 @@ body {
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
+  position: fixed;
+  width: 100%;
 }
 
 .app.clouds {
@@ -119,9 +121,6 @@ main {
   padding: 0.8rem;
 }
 
-.wind .humidity {
-}
-
 .feelsLike {
   position: relative;
   display: inline-block;
@@ -147,4 +146,9 @@ main {
     margin: auto;
     width: 70%;
   }
+}
+
+/* get rid of Algolia x button on search */
+button {
+  display: none;
 }

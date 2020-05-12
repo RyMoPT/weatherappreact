@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import SearchBar from './search.js'
-import weather  from './search.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWind } from '@fortawesome/free-solid-svg-icons'
 import { faTint } from '@fortawesome/free-solid-svg-icons'
@@ -13,31 +11,47 @@ const api= {
 }
 
 function App() {
-
-
-  // const autoSearch = () => {
-  //   var places = require('places.js');
-  //   var placesAutocomplete = places({
-  //   appId: "plALBLVXJIXG",
-  //   apiKey: "a05d42ed7bda4067393cd25340bfd1e8",
-  //   container: document.getElementById('searchbarplz')
-  // });
-  // }
- 
-
+  //using useState initialize weather and query values
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState('');
+
+  //using useEffect to listen on the searchbar with the Algolia API 
+  //then when a country is selected, run the search function.
+  //Also passed empty erray into second argument of useEffect for clean up and make sure
+  //that the effect will go back to initial value since this is what is needed in this case.
+    useEffect(
+      () => {
+    var places = require('places.js');
+    var placesAutocomplete = places({
+      appId: 'plALBLVXJIXG',
+      apiKey: 'a05d42ed7bda4067393cd25340bfd1e8',
+      container: document.querySelector('#searchbarplz'),
+      type: 'city'
+    });
+    console.log(placesAutocomplete)
+   
+    placesAutocomplete.on('change', (e) => {
+      let city = e.suggestion.name;
+      let country = e.suggestion.countryCode;
+      console.log(city)
+      search(city, country)
+      console.log(e)
+    });
+  },[]);
   
-  const search = e => {
-    if (e.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+  //search openweather API using city and country values taken from Algolia API. Then changes weather state to render the results 
+  const search = (city, country) => {
+    // if (e.key === "Enter") {
+      fetch(`${api.base}weather?q=${city},${country}&units=metric&APPID=${api.key}`)
       .then(response => response.json())
       .then(result => {
         setWeather(result);
+        //resetting search bar value to empty string to clear it after the search
         setQuery('');
         console.log(result);
+        
         })
-    }
+    // }
   }
   
   const makeDate = (d) => {
@@ -66,18 +80,15 @@ function App() {
     }
       >
        
-
        <main>
-         {/* <SearchBar/> */}
          <div className="searchBox">
            <input
            type="search"
            id="searchbarplz"
            className="searchBar"
            placeholder="Location?"
-           onChange= {e => setQuery(e.target.value)}
-           value = {query}
-           onKeyPress={search}
+           onChange= {(e) => {setQuery(e.target.value)}}
+           value= {query}
            />
            
          </div>
