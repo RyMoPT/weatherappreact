@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/weatherappreact/static/css/main.3b891db8.chunk.css",
+    "main.css": "/weatherappreact/static/css/main.36a06d82.chunk.css",
     "main.js": "/weatherappreact/static/js/main.cf96dcbc.chunk.js",
     "main.js.map": "/weatherappreact/static/js/main.cf96dcbc.chunk.js.map",
     "runtime-main.js": "/weatherappreact/static/js/runtime-main.23d81317.js",
@@ -8,16 +8,16 @@
     "static/js/2.40fbdc16.chunk.js": "/weatherappreact/static/js/2.40fbdc16.chunk.js",
     "static/js/2.40fbdc16.chunk.js.map": "/weatherappreact/static/js/2.40fbdc16.chunk.js.map",
     "index.html": "/weatherappreact/index.html",
-    "precache-manifest.6de58b175d2c1b6982ed8654a51f1877.js": "/weatherappreact/precache-manifest.6de58b175d2c1b6982ed8654a51f1877.js",
+    "precache-manifest.3efb15e2ba030e844db7d7f63290c37d.js": "/weatherappreact/precache-manifest.3efb15e2ba030e844db7d7f63290c37d.js",
     "service-worker.js": "/weatherappreact/service-worker.js",
-    "static/css/main.3b891db8.chunk.css.map": "/weatherappreact/static/css/main.3b891db8.chunk.css.map",
+    "static/css/main.36a06d82.chunk.css.map": "/weatherappreact/static/css/main.36a06d82.chunk.css.map",
     "static/js/2.40fbdc16.chunk.js.LICENSE.txt": "/weatherappreact/static/js/2.40fbdc16.chunk.js.LICENSE.txt",
     "static/media/App.css": "/weatherappreact/static/media/thunderstorm.33774b41.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.23d81317.js",
     "static/js/2.40fbdc16.chunk.js",
-    "static/css/main.3b891db8.chunk.css",
+    "static/css/main.36a06d82.chunk.css",
     "static/js/main.cf96dcbc.chunk.js"
   ]
 }
